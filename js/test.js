@@ -153,7 +153,7 @@ function randomSpin(){
 	
     //winnerId = getRandom(multiplyList(pieText).length - 1); // от 0
     //spinToId(winnerId);
-	spinToId(0);
+	spinToId();
 }
 
 function returnSpin(){
@@ -175,7 +175,7 @@ document.body.onload = function(){
 		pieText = query.split(',');
 	}
 	document.getElementById('items').value = pieText.join("\n");
-    document.getElementById('bookmarklink').href = "./test.html?items=" + pieText.join(',');
+    document.getElementById('bookmarklink').href = "./index.html?items=" + pieText.join(',');
     refreshUi();
     init();
 
@@ -232,11 +232,7 @@ function getRandomDriftDeg(multipliedItems){
 }
 
 
-function spinToId(id){
-    //rotateAngle -= getAngleFromID(id, multiplyList(pieText).length);
-    //rotateAngle += getRandomDriftDeg(multiplyList(pieText));
-    
-    // Вращаем текст до позиции ID
+function spinToId(){
     texts.forEach(function(text){
         var fromAngle = parseInt(text.transform()[0][1]);
         var toAngle = fromAngle + rotateAngle;
@@ -244,17 +240,9 @@ function spinToId(id){
         text.stop().animate({transform: "r" + toAngle + " " + center.x + " " + center.y}, duration, easing); 
     });
     
-    // Ошибка в ротации секторов. Вращается правильно текст, но неправильно - блоки. 
-    // Попробовать просто крутить колесо, а не вычислять заранее позицию останова !!!!!!!
-    //
-    // Сейчас все вращается правильно, только если сбрасывать начальную позицию колеса. 
-    // 
-    // Вращаем сектора до позиции ID
 	if (roulette == null) {
 		roulette = paper.set(arcs);
 	}
-	
-	//roulette.stop().animate({transform: "r0" + center.x + " " + center.y}, 10000, easing); 
     roulette.stop().animate({transform: "r" + rotateArcs + " " + center.x + " " + center.y}, duration, easing);
 }
 
