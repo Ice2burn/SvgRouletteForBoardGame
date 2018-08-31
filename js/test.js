@@ -255,3 +255,10 @@ function parseList(){
     var list = document.getElementById('items').value.split("\n");
     return list;
 }
+
+window.onkeydown = function(event){
+    if(event.keyCode === 32) {
+        event.preventDefault();
+        document.querySelector('genBtn').click(); //This will trigger a click on the first <a> element.
+    }
+};
