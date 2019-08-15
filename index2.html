@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drink or Truth</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css'>
+    <style>
+    .g{
+      color:#4285F4;
+    }
+    .o{
+      color:#EA4335;
+    }
+    .o1{
+      color:#FBBC05;
+    }
+    .l{
+      color:#34A853;
+    }
+    .e{
+      color:#EA4335;
+    }
+    body{
+       background: #e2e1e0;
+       margin: 35px 5px 5px 5px;
+    }
+
+    .card-1 {
+      padding: 10px 10px 10px 10px;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+    hr {
+         color: #f00;
+         background: #e0e0e0; 
+         width: 100%; 
+         height: 10%;
+         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+    .bold{
+        font-family: Helvetica;
+        font-weight: bold;
+    }
+    .table-responsive>.table>tbody>tr>td{
+        horizontal-align: middle;
+    }
+    .card {
+      margin: 0 auto; /* Added */
+            float: none; /* Added */
+            margin-bottom: 10px; /* Added */
+    }
+    .btncard {
+        padding-top: 20px;
+        margin: 10px;
+    }
+    </style>
+</head>
+<body translate="no">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-md-center"><span class="g">D</span><span class="o">ri</span><span class="o1">nk</span> or <span class="g">Tr</span><span class="l">u</span><span class="e">th</span></h1>
+            </div>   
+            </div>   
+            <div class="row">
+                <div class="card card-1 col-md-6 text-md-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <div class="row btncard">
+                        <button type="button" id="drink" class="btn btn-danger btn-lg">Drink</button>
+                        <button type="button" id="truth" class="btn btn-success btn-lg">Truth</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</body>
+<script>
+    var fileData;
+    
+    function LoadFile() {
+    
+        var file = this.files[0];
+        
+        var reader = new FileReader();
+        reader.onload = function(progressEvent){
+            
+            // By lines
+            var lines = this.result.split('\n');
+            
+            fileData = Array(lines.length);
+            for(var line = 0; line < lines.length; line++){
+                console.log(lines[line]);
+            }
+        };
+    }
+</script>
+</html>
