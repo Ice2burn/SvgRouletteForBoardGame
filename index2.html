@@ -159,6 +159,7 @@
             var ind = Math.floor(Math.random() * (ArrayLen - 0)) + 0;
             //alert(ind);
             var question = TextArray[ind];
+            if (question.length < 3) { question = 'Jackpot! Finish your drink. You can ask for help :)'; }
             //alert(question);
             TextArray[ind] = TextArray[ArrayLen-1]; // меняем последний с текущим и усекаем длину массива
             ArrayLen = ArrayLen - 1;
